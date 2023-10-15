@@ -1,0 +1,48 @@
+{
+  "Name": "compra criada para ativar o webhook do bubble 4",
+  "DocumentNumber": 5405,
+  "TemplateId": 10043847,
+  "Sections": [
+    {
+      "Id": 100025488,
+      "DocumentId": 100054681,
+      "Discount": null,
+      "Total": 3500,
+      "CurrencyId": null,
+      "Code": 0,
+      "Products": [
+        {
+          "Id": 100126338,
+          "DocumentId": 100054681,
+          "SectionId": 100025488,
+          "DealId": 104066240,
+          "ContactId": 102800711,
+          "ProductId": 1458052,
+          "ProductName": "iPhone XS Max 256 GB",
+          "DocumentCreatorId": 10019174,
+          "DocumentDate": "2023-10-04T00:00:00-03:00",
+          "Quantity": 1,
+          "UnitPrice": 3500,
+          "Total": 3500,
+          "Discount": null,
+          "CurrencyId": null,
+          "ContactProductId": null,
+          "Editable": true,
+          "Ordination": 0,
+          "OtherProperties": [
+            {
+              "FieldKey": "document_product_FE035CDE-4941-4581-B8F4-3761F849B4C3",
+              "IntegerValue": 1391228,
+              "ObjectValueName": "A9999"
+            },
+            {
+              "FieldKey": "document_product_FE035CDE-4941-4581-B8F4-3761F849B4C3",
+              "IntegerValue": 1398946,
+              "ObjectValueName": "G1203"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
