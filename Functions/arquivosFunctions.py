@@ -36,7 +36,7 @@ def create_arquivo(dados):
         db.session.add(arquivo)
         db.session.commit()
 
-        return {'id': arquivo.id, 'mimetype': arquivo.mimetype, 'file_name': arquivo.file_name, 'original_name': arquivo.original_name}
+        return {'id': arquivo.id, 'idchat': arquivo.idchat, 'mimetype': arquivo.mimetype, 'file_name': arquivo.file_name, 'original_name': arquivo.original_name}
     except Exception as e:
         print(e)
         return None
