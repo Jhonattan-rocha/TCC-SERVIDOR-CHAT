@@ -161,4 +161,4 @@ def on_leave(data):
     emit('leave', data, room=room, broadcast=True, include_self=True)  # Inclua o parâmetro 'room'
 
 
-socketio.run(app, debug=True, host="10.0.0.100", port=5000, allow_unsafe_werkzeug=True, use_reloader=True, )
+socketio.run(app, debug=True, host="10.0.0.101", port=5000, allow_unsafe_werkzeug=True, use_reloader=True, )
