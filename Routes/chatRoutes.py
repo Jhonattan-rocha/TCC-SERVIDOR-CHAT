@@ -145,11 +145,11 @@ def deletar_chat(id):
 def listar_chats():
     try:
         user = request.args.get('user')
-        if user:
-            return search_by_user(int(user))
-        else:        
-            chats = get_chats()
-            return jsonify(chats), 200
+        # if user:
+        #     return search_by_user(int(user))
+        # else:        
+        chats = get_chats()
+        return jsonify(chats), 200
     except Exception as e:
         print(e)
         return jsonify({'error': 'Bad request'}), 400

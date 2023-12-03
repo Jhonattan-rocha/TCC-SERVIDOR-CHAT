@@ -65,7 +65,11 @@ def delete_chat(id):
 
 def search_by_user(id):
     user_specific_chats = Chat.query.join(Chat.users).filter(User.id == id).group_by(Chat.id).all()
-    
+    print('user', id)
+    print([{'id': c.id, 'titulo': c.titulo, 'descricao': c.descricao, 'status': c.status, 'id_foto': c.id_foto, 'arquivos': [
+    {'id': arquivo.id, 'file_name': arquivo.file_name, "original_name": arquivo.original_name,
+        'mimetype': arquivo.mimetype, 'tag': arquivo.tag} for arquivo in c.arquivos], 'users': [{'iduser': user.iduser, 'nome': user.nome} for user in c.users]} for c in user_specific_chats]
+)
     return [{'id': c.id, 'titulo': c.titulo, 'descricao': c.descricao, 'status': c.status, 'id_foto': c.id_foto, 'arquivos': [
     {'id': arquivo.id, 'file_name': arquivo.file_name, "original_name": arquivo.original_name,
         'mimetype': arquivo.mimetype, 'tag': arquivo.tag} for arquivo in c.arquivos], 'users': [{'iduser': user.iduser, 'nome': user.nome} for user in c.users]} for c in user_specific_chats]
