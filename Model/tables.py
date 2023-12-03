@@ -36,7 +36,8 @@ class User(db.Model):
     
     __tablename__ = 'User'
     
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    iduser = db.Column(db.Integer)
     nome = db.Column(db.String)
     idchat = db.Column(db.Integer, db.ForeignKey('Chat.id'), nullable=False)
 

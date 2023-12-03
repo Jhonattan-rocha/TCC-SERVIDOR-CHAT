@@ -30,6 +30,9 @@ def create_app(db: SQLAlchemy) -> Flask:
 
     from Routes.arquivosRoutes import app as app_arquivos
     app.register_blueprint(app_arquivos)
+    
+    from Routes.userRoutes import app as app_user
+    app.register_blueprint(app_user)
 
     return app
 
@@ -161,4 +164,4 @@ def on_leave(data):
     emit('leave', data, room=room, broadcast=True, include_self=True)  # Inclua o parâmetro 'room'
 
 
-socketio.run(app, debug=True, host="10.0.0.101", port=5000, allow_unsafe_werkzeug=True, use_reloader=True, )
+socketio.run(app, debug=True, host="10.0.0.102", port=5000, allow_unsafe_werkzeug=True, use_reloader=True, )

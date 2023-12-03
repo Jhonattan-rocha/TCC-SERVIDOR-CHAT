@@ -4,9 +4,10 @@ import os
 from flask import Blueprint, request, jsonify, Response
 
 from Functions.arquivosFunctions import search_files_by_filename, search_files_by_originalname, create_arquivo
-from Functions.chatFunctions import create_chat, update_chat, delete_chat, get_chats
+from Functions.chatFunctions import create_chat, update_chat, delete_chat, get_chats, search_by_user
 from Functions.mensagensFunctions import get_mensagens, search_messages_by_filename, \
     search_messages_by_original_name, generate_random_string
+from middlewares.filter import handle_custom_filter
 
 mimetypes.init()
 
@@ -143,8 +144,12 @@ def deletar_chat(id):
 @app.get('/chat/')
 def listar_chats():
     try:
-        chats = get_chats()
-        return jsonify(chats), 200
+        user = request.args.get('user')
+        if user:
+            return search_by_user(int(user))
+        else:        
+            chats = get_chats()
+            return jsonify(chats), 200
     except Exception as e:
         print(e)
         return jsonify({'error': 'Bad request'}), 400
